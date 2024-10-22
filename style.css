@@ -1,0 +1,222 @@
+:root {
+    /* Primary Colours */
+    --tomato: hsl(4, 100%, 67%);
+
+    /* Neutral Colours */
+    --dark-slate-grey: hsl(234, 29%, 20%);
+    --charcoal-grey: hsl(235, 18%, 26%);
+    --grey: hsl(231, 7%, 60%);
+    --white: hsl(0, 0%, 100%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: Roboto-Regular;
+    src: url(./assets/fonts/Roboto-Regular.ttf);
+}
+
+@font-face {
+    font-family: Roboto-Bold;
+    src: url(./assets/fonts/Roboto-Bold.ttf);
+}
+
+body {
+    font-family: Roboto-Regular;
+    display: grid;
+    place-content: center;
+    min-height: 100vh;
+    background-color: var(--dark-slate-grey);
+    color: var(--dark-slate-grey);
+}
+
+h1 {
+    font-family: Roboto-Bold;
+    font-size: 40px;
+}
+
+p {
+    font-size: 16px;
+    padding: 0.4rem 0;
+}
+
+span {
+    font-family: Roboto-Bold;
+}
+
+.main {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+    background-color: var(--white);
+    padding: 1rem;
+    border-radius: 1.5rem;
+}
+
+/* Left Contents */
+#left {
+    width: 500px;
+    padding: 0 3rem;
+}
+
+#left>p {
+    margin: 0.8rem 0;
+}
+
+.list-items {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.email {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 12px;
+    margin-top: 2rem;
+}
+
+input,
+button {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input {
+    border: 1px solid var(--grey);
+    font-family: Roboto-Regular;
+    margin-top: 0.4rem;
+}
+
+input:focus {
+    border: 1px solid var(--grey);
+    outline: 0;
+}
+
+input:active {
+    border: 1px solid var(--grey);
+}
+
+button {
+    margin-top: 1rem;
+    background-color: var(--dark-slate-grey);
+    color: var(--white);
+    font-family: Roboto-Bold;
+    border: none;
+}
+
+button:hover {
+    background-color: var(--tomato);
+    box-shadow: var(--tomato) 0px 5px 15px;
+}
+
+.placeholder-red::placeholder {
+    color: var(--tomato);
+}
+
+.placeholder-grey::placeholder {
+    color: var(--grey);
+}
+
+
+/* Right Content */
+#right img {
+    width: 100%;
+}
+
+.hide {
+    display: none;
+}
+
+#error-message {
+    color: var(--tomato);
+    visibility: hidden;
+}
+
+
+/* Success Page */
+.container {
+    background-color: var(--white);
+    padding: 3rem;
+    border-radius: 2rem;
+    width: 460px;
+}
+
+.container h1 {
+    padding: 1rem 0 0.5rem 0;
+}
+
+.message>button {
+    width: 100%;
+    margin: 2rem 0 0 0;
+}
+
+@media (max-width: 425px) {
+    .main {
+        display: flex;
+        flex-direction: column-reverse;
+        padding: 0;
+        width: 425px;
+        border-radius: 0;
+    }
+
+    #left {
+        width: 425px;
+        padding: 2rem 1.5rem;
+    }
+
+    #right {
+        width: 425px;
+    }
+}
+
+@media (max-width: 375px) {
+    .main {
+        display: flex;
+        flex-direction: column-reverse;
+        padding: 0;
+        width: 375px;
+        border-radius: 0;
+    }
+
+    #left {
+        width: 375px;
+        padding: 2rem 1.5rem;
+    }
+
+    #right {
+        width: 375px;
+    }
+
+    #right img {
+        content: url('./assets/images/illustration-sign-up-mobile.svg');
+    }
+
+    .container {
+        background-color: var(--white);
+        width: 100vw;
+        height: 100vh;
+        border-radius: 0;
+        padding: 6rem 2rem;
+        position: relative;
+    }
+
+    .message>button {
+        position: relative;
+        top: 100px;
+        margin-top: 90px;
+    }
+
+    .hide {
+        display: none;
+    }
+}
